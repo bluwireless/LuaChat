@@ -1,5 +1,13 @@
-// Copyright(c) 2020, James Pascoe
-// Distributed under the MIT License (http://opensource.org/licenses/MIT)
+/**
+ * lua_chat_log_manager.hpp
+ *
+ * This file declares an interface to the 'LogManager', which is an object
+ * that provides logging facilities (using spdlog) throughout the code.
+ *
+ * Copyright © Blu Wireless. All Rights Reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ * Feedback: james.pascoe@bluwireless.com
+ */
 
 #pragma once
 

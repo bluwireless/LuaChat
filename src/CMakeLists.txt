@@ -1,5 +1,12 @@
-# Copyright(c) 2019 James Pascoe
-# Distributed under the MIT License (http://opensource.org/licenses/MIT)
+#[[
+
+CMakeLists.txt - 'LuaChat' src subdirectory build generation file.
+
+Copyright © Blu Wireless. All Rights Reserved.
+Licensed under the MIT license. See LICENSE file in the project.
+Feedback: james.pascoe@bluwireless.com
+
+]]
 
 add_executable(lua_chat lua_chat_main.cpp lua_chat_log_manager.cpp)
 

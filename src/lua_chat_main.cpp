@@ -1,5 +1,13 @@
-// Copyright(c) 2020, James Pascoe
-// Distributed under the MIT License (http://opensource.org/licenses/MIT)
+/**
+ * lua_chat_main.cpp
+ *
+ * This file defines the entry point for LuaChat. Command line arguments are
+ * parsed using the excellent cxxopts (https://github.com/jarro2783/cxxopts/).
+ *
+ * Copyright © Blu Wireless. All Rights Reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ * Feedback: james.pascoe@bluwireless.com
+ */
 
 #include <iostream>
 

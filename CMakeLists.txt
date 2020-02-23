@@ -1,5 +1,12 @@
-# Copyright(c) 2020 James Pascoe
-# Distributed under the MIT License (http://opensource.org/licenses/MIT)
+#[[
+
+CMakeLists.txt - 'LuaChat' top level build generation file.
+
+Copyright © Blu Wireless. All Rights Reserved.
+Licensed under the MIT license. See LICENSE file in the project.
+Feedback: james.pascoe@bluwireless.com
+
+]]
 
 cmake_minimum_required (VERSION 3.12)
 project(LUA_CHAT DESCRIPTION

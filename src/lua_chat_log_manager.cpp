@@ -1,5 +1,14 @@
-// Copyright(c) 2020, James Pascoe
-// Distributed under the MIT License (http://opensource.org/licenses/MIT)
+/**
+ * lua_chat_log_manager.cpp
+ *
+ * This file establishes logging facilities (using spdlog) throughout the code.
+ * Note that access to the logging is provided in the Lua space through the
+ * log action (see actions/lua_chat_action_log.hpp for details).
+ *
+ * Copyright © Blu Wireless. All Rights Reserved.
+ * Licensed under the MIT license. See LICENSE file in the project.
+ * Feedback: james.pascoe@bluwireless.com
+ */
 
 #include <filesystem>
 
