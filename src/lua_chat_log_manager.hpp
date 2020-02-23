@@ -15,6 +15,13 @@
 
 #include "spdlog/spdlog.h"
 
+// Declare an exception to differentiate between calls to 'log_fatal' and
+// runtime errors.
+class FatalExcepton : public std::runtime_error {
+public:
+  FatalExcepton(std::string const& what) : std::runtime_error(what){};
+};
+
 class LogManager {
 
 public:
@@ -87,5 +94,5 @@ void log_fatal(std::string const& format, Args const&... args) {
   spdlog::critical(error);
   spdlog::critical("FATAL ERROR - EXITING");
 
-  throw std::runtime_error(error);
+  throw FatalExcepton(error);
 }

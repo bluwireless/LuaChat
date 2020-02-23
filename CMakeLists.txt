@@ -12,15 +12,23 @@ cmake_minimum_required (VERSION 3.12)
 project(LUA_CHAT DESCRIPTION
         "Example 'chat' application showing how to Combine C++17 and Lua 5.3")
 
-include(cmake/pmm.cmake)
-pmm(CMakeCM ROLLING)  # Enable the CMakeCM modules
-
-# Include a module:
 # Look for required packages
+if (POLICY CMP0078)
+  cmake_policy(SET CMP0078 NEW)
+endif()
+
+if (POLICY CMP0086)
+  cmake_policy(SET CMP0086 NEW)
+endif()
+
 find_package(SWIG 3.0 REQUIRED)
 include(${SWIG_USE_FILE})
 
 find_package(Lua 5.3 REQUIRED)
+
+include(cmake/pmm.cmake)
+pmm(CMakeCM ROLLING)
+
 find_package(Filesystem REQUIRED)
 
 set(CMAKE_CXX_STANDARD 17)

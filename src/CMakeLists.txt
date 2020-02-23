@@ -8,9 +8,15 @@ Feedback: james.pascoe@bluwireless.com
 
 ]]
 
+add_subdirectory(actions)
+
 add_executable(lua_chat lua_chat_main.cpp lua_chat_log_manager.cpp)
 
-target_link_libraries(lua_chat PRIVATE ${LUA_LIBRARIES} std::filesystem)
+target_link_libraries(lua_chat
+                      PRIVATE
+                      actions
+                      ${LUA_LIBRARIES}
+                      std::filesystem)
 
 target_include_directories(lua_chat
                            PRIVATE
