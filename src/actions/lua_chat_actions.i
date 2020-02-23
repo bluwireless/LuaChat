@@ -17,8 +17,25 @@
 
 // Definitions required by the SWIG wrapper to compile
 %{
+#include "lua_chat_log_manager.hpp"
 #include "lua_chat_action_log.hpp"
+#include "lua_chat_action_talk.hpp"
 %}
 
 // Files to be wrapped by SWIG
 %include "lua_chat_action_log.hpp"
+
+%define CTOR_ERROR
+{
+  try {
+    $function
+  }
+  catch (std::exception const& e) {
+    log_fatal(e.what());
+  }
+}
+%enddef
+
+// Include the actions and define exception handlers
+%exception Talk::Talk CTOR_ERROR;
+%include "lua_chat_action_talk.hpp"

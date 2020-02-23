@@ -32,3 +32,6 @@ Licenses for details):
 
 3. pmm for finding std::filesystem for CMake:
    https://github.com/vector-of-bool/pmm
+
+4. Asio for TCP communications and Timer handling:
+   https://think-async.com/Asio/

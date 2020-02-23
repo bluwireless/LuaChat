@@ -26,6 +26,9 @@ include(${SWIG_USE_FILE})
 
 find_package(Lua 5.3 REQUIRED)
 
+set(THREADS_PREFER_PTHREAD_FLAG ON)
+find_package(Threads REQUIRED)
+
 include(cmake/pmm.cmake)
 pmm(CMakeCM ROLLING)
 

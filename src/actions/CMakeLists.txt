@@ -8,7 +8,11 @@ Feedback: james.pascoe@bluwireless.com
 
 ]]
 
-set(LUA_CHAT_SWIG_SRCS lua_chat_actions.i lua_chat_action_log.cpp)
+set(LUA_CHAT_SWIG_SRCS
+    lua_chat_actions.i
+    lua_chat_action_log.cpp
+    lua_chat_action_talk.cpp)
+
 set_source_files_properties(${LUA_CHAT_SWIG_SRCS} PROPERTIES CPLUSPLUS ON)
 swig_add_library(actions
                  TYPE USE_BUILD_SHARED_LIBS
@@ -18,6 +22,9 @@ swig_add_library(actions
 target_include_directories(actions PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}
                                            ${LUA_CHAT_SOURCE_DIR}/src
                                            ${LUA_CHAT_SOURCE_DIR}/third_party
+                                           ${LUA_CHAT_SOURCE_DIR}/third_party/asio
                                            ${LUA_INCLUDE_DIR})
+
+target_compile_definitions(actions PRIVATE ASIO_STANDALONE)
 
 target_link_libraries(actions PRIVATE std::filesystem)

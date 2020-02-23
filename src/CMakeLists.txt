@@ -16,7 +16,8 @@ target_link_libraries(lua_chat
                       PRIVATE
                       actions
                       ${LUA_LIBRARIES}
-                      std::filesystem)
+                      std::filesystem
+                      Threads::Threads)
 
 target_include_directories(lua_chat
                            PRIVATE
