@@ -10,7 +10,10 @@ Feedback: james.pascoe@bluwireless.com
 
 add_subdirectory(actions)
 
-add_executable(lua_chat lua_chat_main.cpp lua_chat_log_manager.cpp)
+add_executable(lua_chat
+               lua_chat_main.cpp
+               lua_chat_log_manager.cpp
+               lua_chat_lua_manager.cpp)
 
 target_link_libraries(lua_chat
                       PRIVATE

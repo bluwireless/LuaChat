@@ -14,6 +14,7 @@
 #include "cxxopts/cxxopts.hpp"
 
 #include "lua_chat_log_manager.hpp"
+#include "lua_chat_lua_manager.hpp"
 
 // Parse command line arguments (see cxxopts.hpp for details)
 static cxxopts::ParseResult parse(int argc, char *argv[])
@@ -41,10 +42,8 @@ static cxxopts::ParseResult parse(int argc, char *argv[])
      cxxopts::value<std::string>()->default_value(LogManager::def_file_lvl))
     ;
 
-  options.add_options("hidden-group")(
-      "behaviour",
-      "Lua behaviours to run",
-      cxxopts::value<std::string>());
+  options.add_options("hidden-group")("behaviour", "Lua behaviour to run",
+                                      cxxopts::value<std::string>());
 
   try
   {
@@ -84,6 +83,31 @@ int main(int argc, char *argv[])
                            arguments["log-file-level"].as<std::string>());
   } catch (std::runtime_error const &e) {
     std::cerr << e.what() << std::endl;
+    return EXIT_FAILURE;
+  }
+
+  // Instantiate the Lua behaviour manager
+  LuaManager lua_m{arguments["behaviour"].as<std::string>()};
+
+  // Pass in the Lua arguments (if specified)
+  if (arguments.count("args")) {
+    try {
+      lua_m.ProcessArguments(arguments["args"].as<std::vector<std::string>>());
+    } catch (std::runtime_error const& e) {
+      std::cerr << e.what() << std::endl;
+      return EXIT_FAILURE;
+    }
+  }
+
+  // Run the behaviour
+  try {
+      lua_m.RunBehaviour();
+  } catch (FatalExcepton const& e) {
+    // This has been thrown by LogManager's log_fatal call(). The error has
+    // already been printed so just exit
+    return EXIT_FAILURE;
+  } catch (std::runtime_error const& e) {
+    std::cerr << "Error running Lua behaviour: " << e.what() << std::endl;
     return EXIT_FAILURE;
   }
 }
