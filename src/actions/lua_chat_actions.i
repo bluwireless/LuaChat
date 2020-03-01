@@ -20,6 +20,7 @@
 #include "lua_chat_log_manager.hpp"
 #include "lua_chat_action_log.hpp"
 #include "lua_chat_action_talk.hpp"
+#include "lua_chat_action_timer.hpp"
 %}
 
 // Files to be wrapped by SWIG
@@ -39,3 +40,6 @@
 // Include the actions and define exception handlers
 %exception Talk::Talk CTOR_ERROR;
 %include "lua_chat_action_talk.hpp"
+
+%exception Timer::Timer CTOR_ERROR;
+%include "lua_chat_action_timer.hpp"

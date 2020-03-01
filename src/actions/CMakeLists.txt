@@ -11,7 +11,8 @@ Feedback: james.pascoe@bluwireless.com
 set(LUA_CHAT_SWIG_SRCS
     lua_chat_actions.i
     lua_chat_action_log.cpp
-    lua_chat_action_talk.cpp)
+    lua_chat_action_talk.cpp
+    lua_chat_action_timer.cpp)
 
 set_source_files_properties(${LUA_CHAT_SWIG_SRCS} PROPERTIES CPLUSPLUS ON)
 swig_add_library(actions

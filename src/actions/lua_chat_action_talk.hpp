@@ -1,5 +1,5 @@
 /**
- * bwt_mcm_action_message.hpp
+ * lua_chat_action_talk.hpp
  *
  * This action allows Lua behaviours to send messages to other Lua behaviours.
  * The primary use-case for this action is for Lua behaviours to implement
@@ -9,7 +9,6 @@
  * Licensed under the MIT license. See LICENSE file in the project.
  * Feedback: james.pascoe@bluwireless.com
  */
-
 #pragma once
 
 #include "asio/asio.hpp"
