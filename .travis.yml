@@ -1,0 +1,14 @@
+os: linux
+language: cpp
+dist: bionic
+
+before_install:
+  - sudo apt-get -y install lua5.3 lua5.3-dev luarocks swig g++-8
+
+install:
+  - sudo luarocks install luaposix
+
+script:
+  - mkdir ../build; cd ../build;
+  - CXX=g++-8 cmake ../LuaChat;
+  - make -j4
