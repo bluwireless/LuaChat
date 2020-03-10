@@ -29,7 +29,7 @@ find_package(Lua 5.3 REQUIRED)
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
 
-include(cmake/pmm.cmake)
+include(third_party/pmm/pmm.cmake)
 pmm(CMakeCM ROLLING)
 
 find_package(Filesystem REQUIRED)
