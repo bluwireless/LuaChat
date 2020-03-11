@@ -1,6 +1,8 @@
 # LuaChat
 
-A Unix 'talk' application implemented using C++17 and Lua 5.3.
+A Unix 'talk' application implemented using C++17 and Lua 5.3. [![Build Status](
+https://travis-ci.org/bluwireless/LuaChat.svg?branch=master)](
+https://travis-ci.org/bluwireless/LuaChat)
 
 LuaChat is an example of how to combine C++17 and Lua 5.3. In particular, LuaChat
 implements a library of C++ primitives called *actions*. The actions library is
