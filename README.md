@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="http://lua.org">
+    <img src="third_party/lua.org/lua-chat-logo.png" width=200>
+  </a>
+</p>
+
 # LuaChat
 
 A Unix 'talk' application implemented using C++17 and Lua 5.3. [![Build Status](
