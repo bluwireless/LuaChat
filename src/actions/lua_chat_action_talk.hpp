@@ -48,7 +48,7 @@ private:
 
   // Class to encapsulate a TCP connection and the data sent over it. Note
   // that this is based on the ASIO Asychronous TCP server tutorial.
-  class tcp_connection : public std::enable_shared_from_this<tcp_connection> {
+  class tcp_connection {
   public:
     using pointer = std::shared_ptr<tcp_connection>;
 
