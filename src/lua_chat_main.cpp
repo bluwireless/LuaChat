@@ -20,7 +20,7 @@
 static cxxopts::ParseResult parse(int argc, char *argv[])
 {
   cxxopts::Options options(argv[0],
-     "Lua Chat - An Example of Integrating C++17 and Lua 5.3");
+     "Lua Chat - An Example of Integrating C++17 and Lua 5.3/5.4");
 
   options.positional_help("[Lua behaviour to run]").show_positional_help();
 
