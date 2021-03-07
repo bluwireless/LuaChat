@@ -236,10 +236,14 @@ void LuaManager::ProcessLuaError(int lua_ret) {
       throw std::runtime_error("syntax error: " + error_message);
     case LUA_ERRMEM:
       throw std::runtime_error("out-of-memory: " + error_message);
-    case LUA_ERRGCMM:
-      throw std::runtime_error("garbage collection: " + error_message);
     case LUA_ERRRUN:
       throw std::runtime_error("runtime error: " + error_message);
+    case LUA_ERRERR:
+      throw std::runtime_error("error: " + error_message);
+#if LUA_VERSION_NUM == 503
+    case LUA_ERRGCMM:
+      throw std::runtime_error("garbage collection: " + error_message);
+#endif
   }
 };
 
