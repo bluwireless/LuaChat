@@ -6,11 +6,11 @@
 
 # LuaChat
 
-A Unix 'talk' application implemented using C++17 and Lua 5.3. [![Build Status](
+A Unix 'talk' application implemented using C++17 and Lua 5.3/5.4. [![Build Status](
 https://travis-ci.org/bluwireless/LuaChat.svg?branch=master)](
 https://travis-ci.org/bluwireless/LuaChat)
 
-LuaChat is an example of how to combine C++17 and Lua 5.3. In particular, LuaChat
+LuaChat is an example of how to combine modern C++ and Lua 5.3/5.4. In particular, LuaChat
 implements a library of C++ primitives called *actions*. The actions library is
 wrapped using the 'Simplified Wrapper and Interface Generator' ([SWIG](http://swig.org))
 to create a Lua binding. This binding is imported into files of Lua that combine
@@ -25,18 +25,23 @@ LuaChat includes the following third-party libraries:
 
 ## Install
 
-LuaChat has been built and tested on Linux Mint 19 and MacOS X (Catalina). Note
+LuaChat has been built and tested on Linux Mint 19 and MacOS X (Catalina/Big Sur). Note
 that your compiler must implement C++17 (or greater) and the filesystem module must
 be available in the std::filesystem namespace. Compilers that are known to work
-include GCC 8 and clang 9.
+include gcc 8, clang 9 and Apple clang 12.
 
-LuaChat requires Lua 5.3, LuaRocks and SWIG to be installed. In addition, LuaChat
-requires the Lua POSIX wrapper to be installed. For Linux, this can be achieved with:
+LuaChat requires Lua 5.3/5.4, LuaRocks and SWIG to be installed. In addition, LuaChat
+requires the Lua POSIX wrapper to be installed. For Linux Mint 19, this can be achieved with:
 
 ```bash
 sudo apt-get -y install lua5.3 lua5.3-dev luarocks swig
 sudo luarocks install luaposix
 ```
+
+If you would like to use Lua 5.4 and are running Ubuntu 20.10 (i.e. Groovy) or later, then you can
+simply substitute 5.4 for 5.3 into the above i.e. there are packages available. For other operating
+systems, you may need to build Lua 5.4 from source. It is straightforward and there are good instructions
+on the [Lua.org](https://www.lua.org/download.html) website.
 
 For MacOS use:
 
@@ -61,7 +66,7 @@ Running the LuaChat executable will print a usage message similar to the followi
 
 ```
 Please specify a Lua behaviour to run!
-Lua Chat - An Example of Integrating C++17 and Lua 5.3
+Lua Chat - An Example of Integrating C++17 and Lua 5.3/5.4
 Usage:
   ./src/lua_chat [OPTION...] [Lua behaviour to run]
 
@@ -105,4 +110,4 @@ and then in another window:
 
 ## Support
 
-Please email james.pascoe@bluwireless.com for support.
+Please email james@james-pascoe.com for support.
